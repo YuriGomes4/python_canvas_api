@@ -1,3 +1,14 @@
+Metadata-Version: 2.1
+Name: py_canvas
+Version: 0.0.1
+Summary: Wrapper não oficial do Canvas LMS
+Author: Yuri Gomes
+Author-email: yurialdegomes@gmail.com
+License: MIT License
+Keywords: canvas lms
+Description-Content-Type: text/markdown
+Requires-Dist: requests
+
 # python_canvas_api
  
 # Material de apoio
