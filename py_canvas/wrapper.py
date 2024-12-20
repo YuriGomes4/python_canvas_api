@@ -49,6 +49,48 @@ Resposta JSON: {response.json()}""")
 
 class accounts(auth):
 
+    def list_accounts(self, **kwargs) -> dict:
+        """
+        Descrição da função
+        """
+        #Descrição da função
+
+        asct = True #Acesso Só Com Token
+
+        if asct and (self.access_token == "" or self.access_token == None or type(self.access_token) != str):
+            print("Token inválido")
+            return {}
+
+        url = self.base_url+f"/api/v1/accounts"
+
+        params = {}
+
+        headers = {
+            'Authorization': f'Bearer {self.access_token}',
+        }
+
+        arg_dict = {}
+
+        if 'arg_dict' in kwargs:
+            arg_dict = kwargs['arg_dict']
+
+        if kwargs != {}:
+            for key, value in kwargs.items():
+                if key != 'arg_dict':
+                    if key in arg_dict:
+                        params[arg_dict[key]] = value
+                    else:
+                        params[key] = value
+
+        response = self.request("GET", url=url, headers=headers)
+
+        if response:
+
+            return response.json()
+        
+        else:
+            return {}
+
     def delete_a_user_from_the_root_account(self, account_id, user_id, **kwargs) -> dict:
         """
         Descrição da função
