@@ -7,3 +7,4 @@ py_canvas.egg-info/SOURCES.txt
 py_canvas.egg-info/dependency_links.txt
 py_canvas.egg-info/requires.txt
 py_canvas.egg-info/top_level.txt
+tests/test.py
