@@ -82,7 +82,7 @@ class accounts(auth):
                     else:
                         params[key] = value
 
-        response = self.request("GET", url=url, headers=headers)
+        response = self.request("GET", url=url, headers=headers, params=params)
 
         if response:
 
@@ -124,7 +124,7 @@ class accounts(auth):
                     else:
                         params[key] = value
 
-        response = self.request("DELETE", url=url, headers=headers)
+        response = self.request("DELETE", url=url, headers=headers, params=params)
 
         if response:
 
@@ -168,7 +168,7 @@ class users(auth):
                     else:
                         params[key] = value
 
-        response = self.request("GET", url=url, headers=headers)
+        response = self.request("GET", url=url, headers=headers, params=params)
 
         if response:
 
